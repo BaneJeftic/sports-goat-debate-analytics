@@ -1,0 +1,16 @@
+[2026-08-04T18:05:45.406+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 1_sports_goat_raw_to_clean.spark_raw_to_clean_job scheduled__2026-08-03T17:45:00+00:00 [queued]>
+[2026-08-04T18:05:45.426+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 1_sports_goat_raw_to_clean.spark_raw_to_clean_job scheduled__2026-08-03T17:45:00+00:00 [queued]>
+[2026-08-04T18:05:45.427+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 2
+[2026-08-04T18:05:45.464+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): spark_raw_to_clean_job> on 2026-08-03 17:45:00+00:00
+[2026-08-04T18:05:45.475+0000] {standard_task_runner.py:60} INFO - Started process 243 to run task
+[2026-08-04T18:05:45.485+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', '1_sports_goat_raw_to_clean', 'spark_raw_to_clean_job', 'scheduled__2026-08-03T17:45:00+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/sports_goat_pipeline.py', '--cfg-path', '/tmp/tmph2dlfhkz']
+[2026-08-04T18:05:45.491+0000] {standard_task_runner.py:88} INFO - Job 8: Subtask spark_raw_to_clean_job
+[2026-08-04T18:05:45.580+0000] {task_command.py:423} INFO - Running <TaskInstance: 1_sports_goat_raw_to_clean.spark_raw_to_clean_job scheduled__2026-08-03T17:45:00+00:00 [running]> on host 0239cfc28719
+[2026-08-04T18:05:45.714+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='branislav' AIRFLOW_CTX_DAG_ID='1_sports_goat_raw_to_clean' AIRFLOW_CTX_TASK_ID='spark_raw_to_clean_job' AIRFLOW_CTX_EXECUTION_DATE='2026-08-03T17:45:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-08-03T17:45:00+00:00'
+[2026-08-04T18:05:45.716+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-08-04T18:05:45.718+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'bash /app/run_raw_to_clean.sh ']
+[2026-08-04T18:05:45.736+0000] {subprocess.py:86} INFO - Output:
+[2026-08-04T18:05:45.844+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-08-04T18:05:45.887+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=1_sports_goat_raw_to_clean, task_id=spark_raw_to_clean_job, execution_date=20260803T174500, start_date=20260804T180545, end_date=20260804T180545
+[2026-08-04T18:05:45.952+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-08-04T18:05:45.982+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
