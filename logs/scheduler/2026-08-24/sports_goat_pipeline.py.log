@@ -942,3 +942,83 @@
 [2026-08-24T14:50:34.920+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:50:34.920+0000] {dag.py:3823} INFO - Setting next_dagrun for 1_sports_goat_raw_to_clean to 2026-08-23 17:45:00+00:00, run_after=2026-08-24 17:45:00+00:00
 [2026-08-24T14:50:34.929+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:50:34.929+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_sports_goat_run_batch to 2026-08-23 18:00:00+00:00, run_after=2026-08-24 18:00:00+00:00
 [2026-08-24T14:50:34.960+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sports_goat_pipeline.py took 0.135 seconds
+[2026-08-24T14:51:05.210+0000] {processor.py:161} INFO - Started process (PID=215) to work on /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:51:05.211+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sports_goat_pipeline.py for tasks to queue
+[2026-08-24T14:51:05.213+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:51:05.212+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:51:05.229+0000] {processor.py:840} INFO - DAG(s) '2_sports_goat_run_batch', '1_sports_goat_raw_to_clean' retrieved from /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:51:05.261+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:51:05.260+0000] {dag.py:3036} INFO - Sync 2 DAGs
+[2026-08-24T14:51:05.285+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:51:05.285+0000] {dag.py:3823} INFO - Setting next_dagrun for 1_sports_goat_raw_to_clean to 2026-08-23 17:45:00+00:00, run_after=2026-08-24 17:45:00+00:00
+[2026-08-24T14:51:05.291+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:51:05.291+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_sports_goat_run_batch to 2026-08-23 18:00:00+00:00, run_after=2026-08-24 18:00:00+00:00
+[2026-08-24T14:51:05.316+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sports_goat_pipeline.py took 0.111 seconds
+[2026-08-24T14:51:35.505+0000] {processor.py:161} INFO - Started process (PID=216) to work on /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:51:35.507+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sports_goat_pipeline.py for tasks to queue
+[2026-08-24T14:51:35.510+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:51:35.509+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:51:35.524+0000] {processor.py:840} INFO - DAG(s) '2_sports_goat_run_batch', '1_sports_goat_raw_to_clean' retrieved from /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:51:35.556+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:51:35.555+0000] {dag.py:3036} INFO - Sync 2 DAGs
+[2026-08-24T14:51:35.578+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:51:35.578+0000] {dag.py:3823} INFO - Setting next_dagrun for 1_sports_goat_raw_to_clean to 2026-08-23 17:45:00+00:00, run_after=2026-08-24 17:45:00+00:00
+[2026-08-24T14:51:35.584+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:51:35.584+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_sports_goat_run_batch to 2026-08-23 18:00:00+00:00, run_after=2026-08-24 18:00:00+00:00
+[2026-08-24T14:51:35.612+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sports_goat_pipeline.py took 0.112 seconds
+[2026-08-24T14:52:05.854+0000] {processor.py:161} INFO - Started process (PID=217) to work on /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:52:05.856+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sports_goat_pipeline.py for tasks to queue
+[2026-08-24T14:52:05.859+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:52:05.858+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:52:05.912+0000] {processor.py:840} INFO - DAG(s) '1_sports_goat_raw_to_clean', '2_sports_goat_run_batch' retrieved from /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:52:05.955+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:52:05.954+0000] {dag.py:3036} INFO - Sync 2 DAGs
+[2026-08-24T14:52:05.992+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:52:05.992+0000] {dag.py:3823} INFO - Setting next_dagrun for 1_sports_goat_raw_to_clean to 2026-08-23 17:45:00+00:00, run_after=2026-08-24 17:45:00+00:00
+[2026-08-24T14:52:05.998+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:52:05.998+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_sports_goat_run_batch to 2026-08-23 18:00:00+00:00, run_after=2026-08-24 18:00:00+00:00
+[2026-08-24T14:52:06.040+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sports_goat_pipeline.py took 0.193 seconds
+[2026-08-24T14:52:36.247+0000] {processor.py:161} INFO - Started process (PID=218) to work on /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:52:36.249+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sports_goat_pipeline.py for tasks to queue
+[2026-08-24T14:52:36.250+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:52:36.250+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:52:36.262+0000] {processor.py:840} INFO - DAG(s) '2_sports_goat_run_batch', '1_sports_goat_raw_to_clean' retrieved from /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:52:36.293+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:52:36.293+0000] {dag.py:3036} INFO - Sync 2 DAGs
+[2026-08-24T14:52:36.318+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:52:36.318+0000] {dag.py:3823} INFO - Setting next_dagrun for 1_sports_goat_raw_to_clean to 2026-08-23 17:45:00+00:00, run_after=2026-08-24 17:45:00+00:00
+[2026-08-24T14:52:36.325+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:52:36.325+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_sports_goat_run_batch to 2026-08-23 18:00:00+00:00, run_after=2026-08-24 18:00:00+00:00
+[2026-08-24T14:52:36.349+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sports_goat_pipeline.py took 0.106 seconds
+[2026-08-24T14:53:06.482+0000] {processor.py:161} INFO - Started process (PID=219) to work on /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:53:06.485+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sports_goat_pipeline.py for tasks to queue
+[2026-08-24T14:53:06.487+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:53:06.486+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:53:06.511+0000] {processor.py:840} INFO - DAG(s) '1_sports_goat_raw_to_clean', '2_sports_goat_run_batch' retrieved from /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:53:06.564+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:53:06.564+0000] {dag.py:3036} INFO - Sync 2 DAGs
+[2026-08-24T14:53:06.607+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:53:06.607+0000] {dag.py:3823} INFO - Setting next_dagrun for 1_sports_goat_raw_to_clean to 2026-08-23 17:45:00+00:00, run_after=2026-08-24 17:45:00+00:00
+[2026-08-24T14:53:06.622+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:53:06.621+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_sports_goat_run_batch to 2026-08-23 18:00:00+00:00, run_after=2026-08-24 18:00:00+00:00
+[2026-08-24T14:53:06.657+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sports_goat_pipeline.py took 0.187 seconds
+[2026-08-24T14:53:36.812+0000] {processor.py:161} INFO - Started process (PID=220) to work on /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:53:36.814+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sports_goat_pipeline.py for tasks to queue
+[2026-08-24T14:53:36.817+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:53:36.816+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:53:36.830+0000] {processor.py:840} INFO - DAG(s) '1_sports_goat_raw_to_clean', '2_sports_goat_run_batch' retrieved from /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:53:36.864+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:53:36.863+0000] {dag.py:3036} INFO - Sync 2 DAGs
+[2026-08-24T14:53:36.893+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:53:36.893+0000] {dag.py:3823} INFO - Setting next_dagrun for 1_sports_goat_raw_to_clean to 2026-08-23 17:45:00+00:00, run_after=2026-08-24 17:45:00+00:00
+[2026-08-24T14:53:36.900+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:53:36.900+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_sports_goat_run_batch to 2026-08-23 18:00:00+00:00, run_after=2026-08-24 18:00:00+00:00
+[2026-08-24T14:53:36.945+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sports_goat_pipeline.py took 0.137 seconds
+[2026-08-24T14:54:07.187+0000] {processor.py:161} INFO - Started process (PID=221) to work on /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:54:07.189+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sports_goat_pipeline.py for tasks to queue
+[2026-08-24T14:54:07.191+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:54:07.190+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:54:07.204+0000] {processor.py:840} INFO - DAG(s) '1_sports_goat_raw_to_clean', '2_sports_goat_run_batch' retrieved from /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:54:07.245+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:54:07.244+0000] {dag.py:3036} INFO - Sync 2 DAGs
+[2026-08-24T14:54:07.279+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:54:07.279+0000] {dag.py:3823} INFO - Setting next_dagrun for 1_sports_goat_raw_to_clean to 2026-08-23 17:45:00+00:00, run_after=2026-08-24 17:45:00+00:00
+[2026-08-24T14:54:07.286+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:54:07.286+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_sports_goat_run_batch to 2026-08-23 18:00:00+00:00, run_after=2026-08-24 18:00:00+00:00
+[2026-08-24T14:54:07.311+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sports_goat_pipeline.py took 0.128 seconds
+[2026-08-24T14:54:37.488+0000] {processor.py:161} INFO - Started process (PID=222) to work on /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:54:37.490+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sports_goat_pipeline.py for tasks to queue
+[2026-08-24T14:54:37.492+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:54:37.491+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:54:37.503+0000] {processor.py:840} INFO - DAG(s) '1_sports_goat_raw_to_clean', '2_sports_goat_run_batch' retrieved from /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:54:37.537+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:54:37.537+0000] {dag.py:3036} INFO - Sync 2 DAGs
+[2026-08-24T14:54:37.561+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:54:37.561+0000] {dag.py:3823} INFO - Setting next_dagrun for 1_sports_goat_raw_to_clean to 2026-08-23 17:45:00+00:00, run_after=2026-08-24 17:45:00+00:00
+[2026-08-24T14:54:37.569+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:54:37.568+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_sports_goat_run_batch to 2026-08-23 18:00:00+00:00, run_after=2026-08-24 18:00:00+00:00
+[2026-08-24T14:54:37.663+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sports_goat_pipeline.py took 0.179 seconds
+[2026-08-24T14:55:07.800+0000] {processor.py:161} INFO - Started process (PID=223) to work on /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:55:07.802+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sports_goat_pipeline.py for tasks to queue
+[2026-08-24T14:55:07.805+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:55:07.804+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:55:07.820+0000] {processor.py:840} INFO - DAG(s) '1_sports_goat_raw_to_clean', '2_sports_goat_run_batch' retrieved from /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:55:07.860+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:55:07.859+0000] {dag.py:3036} INFO - Sync 2 DAGs
+[2026-08-24T14:55:07.891+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:55:07.891+0000] {dag.py:3823} INFO - Setting next_dagrun for 1_sports_goat_raw_to_clean to 2026-08-23 17:45:00+00:00, run_after=2026-08-24 17:45:00+00:00
+[2026-08-24T14:55:07.899+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:55:07.899+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_sports_goat_run_batch to 2026-08-23 18:00:00+00:00, run_after=2026-08-24 18:00:00+00:00
+[2026-08-24T14:55:07.928+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sports_goat_pipeline.py took 0.136 seconds
+[2026-08-24T14:55:38.042+0000] {processor.py:161} INFO - Started process (PID=224) to work on /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:55:38.044+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/sports_goat_pipeline.py for tasks to queue
+[2026-08-24T14:55:38.046+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:55:38.045+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:55:38.058+0000] {processor.py:840} INFO - DAG(s) '2_sports_goat_run_batch', '1_sports_goat_raw_to_clean' retrieved from /opt/airflow/dags/sports_goat_pipeline.py
+[2026-08-24T14:55:38.095+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:55:38.094+0000] {dag.py:3036} INFO - Sync 2 DAGs
+[2026-08-24T14:55:38.122+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:55:38.121+0000] {dag.py:3823} INFO - Setting next_dagrun for 1_sports_goat_raw_to_clean to 2026-08-23 17:45:00+00:00, run_after=2026-08-24 17:45:00+00:00
+[2026-08-24T14:55:38.128+0000] {logging_mixin.py:188} INFO - [2026-08-24T14:55:38.128+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_sports_goat_run_batch to 2026-08-23 18:00:00+00:00, run_after=2026-08-24 18:00:00+00:00
+[2026-08-24T14:55:38.156+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/sports_goat_pipeline.py took 0.120 seconds
