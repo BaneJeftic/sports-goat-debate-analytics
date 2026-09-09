@@ -4,7 +4,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, from_json
 from pyspark.sql.types import StructType, StringType, LongType, BooleanType
 
-# 1. Kreiranje Spark sesije
+# Spark session builder
 spark = SparkSession.builder \
     .appName("YouTubeCommentsStreaming") \
     .config(
@@ -15,7 +15,7 @@ spark = SparkSession.builder \
 
 spark.sparkContext.setLogLevel("WARN")
 
-# 2. Postgres Konekcija
+# Postgres connection
 postgres_user = os.environ.get("POSTGRES_USER", "postgres")
 postgres_password = os.environ.get("POSTGRES_PASSWORD", "postgres")
 postgres_db = os.environ.get("POSTGRES_DB", "goat_db")
@@ -24,7 +24,7 @@ postgres_port = "5432"
 
 jdbc_url = f"jdbc:postgresql://{postgres_host}:{postgres_port}/{postgres_db}"
 
-# 3. TAČNA JSON ŠEMA prema tvojoj poruci
+# JSON schema
 schema = StructType() \
     .add("kind", StringType()) \
     .add("etag", StringType()) \
@@ -57,7 +57,7 @@ schema = StructType() \
         .add("isPublic", BooleanType())
     )
 
-# 4. Čitanje iz Kafke
+# Kafka readStream
 df = spark.readStream \
     .format("kafka") \
     .option("kafka.bootstrap.servers", "kafka:29092") \
@@ -65,7 +65,7 @@ df = spark.readStream \
     .option("startingOffsets", "earliest") \
     .load()
 
-# 5. Parsiranje sa proverom ne-null vrednosti
+# ParsedDF
 parsed_df = df.select(
     from_json(col("value").cast("string"), schema).alias("data")
 ).select(
@@ -77,7 +77,7 @@ parsed_df = df.select(
     col("data.snippet.topLevelComment.snippet.publishedAt").alias("published_at")
 ).filter(col("comment_id").isNotNull())  # Odbacuje neuspešno parsirane redove
 
-# 6. ForeachBatch funkcija sa logovanjem i upisom u Postgres
+# Write to Postgres
 def write_to_postgres(batch_df, batch_id):
     row_count = batch_df.count()
     
@@ -105,7 +105,6 @@ def write_to_postgres(batch_df, batch_id):
         print(f"-> GREŠKA PRI UPISU U POSTGRES: {e}")
         traceback.print_exc()
 
-# 7. Pokretanje (novi checkpoint v10 da pročita ponovo sve poruke iz Kafke od početka)
 query = parsed_df.writeStream \
     .foreachBatch(write_to_postgres) \
     .outputMode("append") \

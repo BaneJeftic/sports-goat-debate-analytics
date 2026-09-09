@@ -3,13 +3,13 @@ import os
 from minio import Minio
 from pyspark.sql import SparkSession
 
-# Čist endpoint bez http:// i donjih crta
+# Endpoint
 endpoint = "minio:9000"
 
 access_key = os.getenv("MINIO_ROOT_USER", "minioadmin")
 secret_key = os.getenv("MINIO_ROOT_PASSWORD", "minioadmin")
 
-# Inicijalizacija MinIO klijenta
+# MinIO client 
 minio_client = Minio(
     endpoint,
     access_key=access_key,
@@ -40,7 +40,7 @@ try:
 except Exception as e:
   print(f"Greška pri čitanju iz MinIO-a: {e}")
 
-# Inicijalizacija Spark Sesije
+# Spark Session builder
 spark = SparkSession.builder.appName("BronzeToSilver").getOrCreate()
 
 if not all_items:
@@ -48,10 +48,10 @@ if not all_items:
 else:
   print(f"Pronađeno {len(all_items)} stavki. Pokrećem PySpark obradu...")
 
-  # Konvertujemo prikupljene JSON objekte u PySpark DataFrame
+  # JSON to PySpark DataFrame
   df_raw = spark.createDataFrame(all_items)
 
-  # Prečišćavanje podataka
+  # DFcleaned
   df_cleaned = (
       df_raw.select(
           df_raw["id"]["videoId"].alias("video_id"),
@@ -67,18 +67,16 @@ else:
   print("Prikaz prvih 10 prečišćenih zapisa:")
   df_cleaned.show(10, truncate=False)
 
-  # Čuvanje u Parquet format lokalno u kontejneru
   local_parquet_dir = "/tmp/cleaned_parquet"
   
-  # .coalesce(1) osigurava da imamo samo jedan fajl umesto više particija
+  # Using .coalesce(1) to be sure we have only one file
   df_cleaned.coalesce(1).write.mode("overwrite").parquet(local_parquet_dir)
 
-  # Upload Parquet fajla u Silver/Cleaned bucket pod FIKSNIM imenom
+  # Upload Parquet file
   bucket_clean = "football-goat-videos-cleaned"
   if not minio_client.bucket_exists(bucket_clean):
     minio_client.make_bucket(bucket_clean)
 
-  # Tražimo generisani part fajl i dižemo ga pod stalnim imenom
   uploaded = False
   for root, _, files in os.walk(local_parquet_dir):
     for file in files:
