@@ -24,9 +24,29 @@ The ingestion layer utilizes **Apache NiFi** for data orchestration, **MinIO** a
 
 To interact with MinIO, NiFi processors utilize an `AWSCredentialsProviderService` controller service configured with access and secret keys. Communication is established over the internal Docker network via `http://minio:9000`.
 
+## 🪣 MinIO Bucket Setup
+Before running the pipelines, ensure the following buckets are created in MinIO (`http://localhost:9001`):
+
+* `football-goat-videos-raw` — Stores raw YouTube API JSON responses.
+* `football-goat-videos-cleaned` — Stores intermediate clean video metadata in Parquet.
+* `football-goat-comments-raw` — Stores raw aggregated comment records in Parquet.
+
+*(Note: You can use an automated MinIO initialization container in Docker Compose, and these buckets will be provisioned automatically).*
+
 # Phase II: Apache NiFi Data Ingestion Workflows
 
 Data ingestion is split into two automated pipelines within Apache NiFi to handle raw video discovery and comment fetching independently.
+
+## 💾 NiFi Flow Definitions & Import
+The exported NiFi flow definitions are located in the `nifi_workflows/` directory:
+* `Football_GOAT_raw_data.json` (Video Metadata Ingestion)
+* `Football_GOAT_comments_data.json` (Comments Ingestion & Routing)
+
+#### How to Import:
+1. Open NiFi UI at `https://localhost:8443`.
+2. Drag and drop a **Process Group** onto the canvas (or use the **Upload Process Group** icon).
+3. Browse and select the corresponding JSON file from `nifi_workflows/`.
+4. Enable the `AWSCredentialsProviderService` controller service with your MinIO credentials.
 
 # Workflow 1: Football GOAT Raw Data Ingestion
 This workflow discovers relevant YouTube videos based on specific search criteria and writes the raw responses directly to object storage.
