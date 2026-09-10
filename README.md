@@ -176,7 +176,7 @@ While Kafka is configured to auto-create missing topics upon the first message, 
 
 ```bash
 docker exec -it kafka kafka-topics --create \
-  --bootstrap-server localhost:9092 \
+  --bootstrap-server localhost:29092 \
   --replication-factor 1 \
   --partitions 1 \
   --topic comments-streaming-topic
