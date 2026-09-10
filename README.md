@@ -180,6 +180,7 @@ docker exec -it kafka kafka-topics --create \
   --replication-factor 1 \
   --partitions 1 \
   --topic comments-streaming-topic
+```
 
 ### 1. Stream Subscription & Kafka Integration
 * **Source:** Subscribes to the Kafka topic `comments-streaming-topic` over `kafka:29092` with `startingOffsets=earliest`.
