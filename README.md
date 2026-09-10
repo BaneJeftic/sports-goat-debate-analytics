@@ -165,9 +165,21 @@ To ensure smooth automated batch operations, job execution is orchestrated using
 
 The streaming layer processes comment payloads in real time as they arrive on the Kafka message bus, cleans and flattens their schema, and persists the structured records directly into PostgreSQL for live analytics.
 
-## Real-Time Comment Ingestion & Transformation (`streaming_comments_cleanup.py`)
+# Real-Time Comment Ingestion & Transformation (`streaming_comments_cleanup.py`)
 
 This PySpark Structured Streaming application runs continuously within the dedicated `spark_streaming_worker` container.
+
+## Kafka Topic Setup
+The streaming pipeline uses the `comments-streaming-topic` topic. 
+
+While Kafka is configured to auto-create missing topics upon the first message, you can also pre-create it manually via **Kafka UI** (`http://localhost:8083`) or by running:
+
+```bash
+docker exec -it kafka kafka-topics --create \
+  --bootstrap-server localhost:9092 \
+  --replication-factor 1 \
+  --partitions 1 \
+  --topic comments-streaming-topic
 
 ### 1. Stream Subscription & Kafka Integration
 * **Source:** Subscribes to the Kafka topic `comments-streaming-topic` over `kafka:29092` with `startingOffsets=earliest`.
